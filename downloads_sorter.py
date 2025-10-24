@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # downloads_sorter.py
-# This script sorts the contents of the user's system Downloads folder by file and then places it in the correct folder
+# This script sorts the contents of the user's system Downloads folder into in the correct folder
 # Written by: JakeTheSnake(JMG3000)
 
 import os
