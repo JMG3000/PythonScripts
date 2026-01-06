@@ -7,7 +7,7 @@ import os
 import shutil
 
 # Define the path to the downloads folder
-DOWNLOADS_PATH = os.path.expanduser('~\Downloads')
+DOWNLOADS_PATH = os.path.expanduser('~/Downloads')
 
 # Define the categories and their corresponding file extensions
 # Review the file types before executing
@@ -23,7 +23,7 @@ CATEGORIES = {
 }
 
 #function to apply the CATEGORIES extension values to found file types
-def categorize_fil(filename):
+def categorize_file(filename):
     try:
         ext = os.path.splitext(filename)[1].lower()
         for category, extensions in CATEGORIES.items():
@@ -35,7 +35,7 @@ def categorize_fil(filename):
         print(f"Failed to access directory or file {filename}.  Error Code{e}")
 
 def organize_downloads():
-
+    
     #for each item found in the folder/directory
     for item in os.listdir(DOWNLOADS_PATH):
 
@@ -45,7 +45,7 @@ def organize_downloads():
 
         #check if there
         if os.path.isfile(item_path):
-            category = categorize_fil(item)
+            category = categorize_file(item)
             target_folder = os.path.join(DOWNLOADS_PATH, category)
             os.makedirs(target_folder, exist_ok=True)
             target_path = os.path.join(target_folder, item)
@@ -69,7 +69,7 @@ def organize_downloads():
                 print(f"Failed to move {item_path} to {target_path}.  Error Code{e}")
 
 
-
+# Main execution block
 if __name__ == "__main__":
     organize_downloads()
     print("...Done")
