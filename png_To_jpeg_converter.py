@@ -57,16 +57,18 @@ def converter():
         try:
             img_data.save(output_path, "JPEG", quality=95)
             print("Saved {}".format(output_path))
+            return 1
 
         # catch an exception when the converted file is not saved
         except Exception as e:
             print(f"Failed to save {output_path}. Error Code{e}")
+            return 0
 
 
 
 if __name__ == "__main__":
-    converter()
     print("...Done")
-
-    #print("The png image has been converted to a jpeg!")
-    # I used the os.
+    if converter() == 1:
+        print("The png image has been converted to a jpeg!")
+    else:
+        print("An Error has occurred in the application.\n The png image has not been converted to a jpeg!\n")
