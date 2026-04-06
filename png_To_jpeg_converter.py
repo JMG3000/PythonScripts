@@ -11,7 +11,7 @@ import os
 def converter():
     stop = True
     while stop:
-        # Define the path to the desired folder
+        # define the path to the desired folder
         pic_path = os.path.expanduser('~/Pictures/headshots')
 
         user_png_path = input("Please enter the path and name of the png you wish to convert: ")
